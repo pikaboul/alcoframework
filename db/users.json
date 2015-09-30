@@ -26,12 +26,5 @@
         "lastName": "Boggio",
         "age": "321",
         "job": "scatophile"
-    },
-    {
-        "id": 10,
-        "firstName": "Lena",
-        "lastName": "Y\u00e9c\u00e9plou",
-        "age": "563",
-        "job": "constip\u00e9"
     }
 ]
