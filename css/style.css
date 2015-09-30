@@ -1,0 +1,54 @@
+body {
+	margin: 0;
+}
+
+.name {
+	font-size: 3em;
+	color: Turquoise;
+	text-align: center;
+	margin-top: 100px;
+	padding: 30px;
+	background-color: #eee;
+	font-family: 'Arial';
+	position: relative;
+}
+
+.name:last-of-type {
+	margin-bottom: 100px;
+}
+
+h1 {
+	transform:translate3D(-3000px,0,0);
+	-webkit-animation-duration: 0.7s;
+	-webkit-animation-delay: 1s;
+}
+
+.age {
+	font-size: 0.5em
+}
+
+.cop {
+	position: absolute;
+	font-size: 0.7em;
+	bottom: 0.4em;
+	right: 0.4em;
+	font-style: italic;
+}
+
+.cop:before {
+	content: "\a9";
+}
+
+.remove {
+	position: absolute;
+	top: 0.4em;
+	right: 0.4em;
+	-webkit-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	transition: all 0.4s;
+}
+
+.remove:hover {
+	cursor: pointer;
+	transform: rotate(180deg);
+}
