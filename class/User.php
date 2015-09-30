@@ -8,11 +8,12 @@ class User
     private $copyright;
     private $id;
 
-    function __construct($fn, $ln, $copyright = "", $age = null)
+    function __construct($fn, $ln, $id, $copyright = "", $age = null)
     {
         $this->firstname = $fn;
         $this->lastname = $ln;
         $this->copyright = $copyright;
+        $this->id = $id;
         $this->age = is_null($age) ? rand(15,99) : $age;
     }
 

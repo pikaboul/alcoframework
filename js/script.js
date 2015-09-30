@@ -13,7 +13,7 @@ $(document).keypress(function(e) {
 
 $(document).on('click','.remove',function(e) {
 	var id = $(this).attr('data-id');
-	ajaxreq({ lastname: lastname, firstname: firstname, id: id },"http://localhost:3000/Back/remove",function(){},function(){});
+	ajaxreq({ id: id },"http://localhost:3000/Back/remove",function(){},function(){});
 });
 
 
