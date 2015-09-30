@@ -7,7 +7,10 @@
 </head>
 <body>
 	<div class="name">
-		<h1 class="animated tada">Bonjour, cher utilisateur de l'alcoframework.</h1>
+		<h1 class="animated tada" style="-webkit-animation-delay: 0s;">Bonjour, cher utilisateur de l'alcoframework.</h1>
+	</div>
+	<div class="name animated bounceInUp" style="-webkit-animation-delay: 1.3s;">
+		<h2><a href="/bonjour">Veux-tu voir tous nos heureux utilisateurs ?</a></h2>
 	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

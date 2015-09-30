@@ -6,7 +6,7 @@ $i = 0;
 
 $data = array();
 
-foreach ($users->users as $key => $user) {
+foreach ($users as $key => $user) {
 	$cop = isset($user->copyright)?$user->copyright:"";
 	$age = isset($user->age)?$user->age:null;
 	$job = isset($user->job)?$user->job:null;
