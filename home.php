@@ -1,0 +1,3 @@
+<?php
+$engine->render('home');
+?>

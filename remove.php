@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 	$users = json_decode(file_get_contents("./db/users.json"));
 
@@ -13,7 +13,9 @@
 	}
 
 	unset($users->users[$key]);
-	
+
 	file_put_contents("./db/users.json", json_encode($users));
+
+	echo $id;
 
 ?>
