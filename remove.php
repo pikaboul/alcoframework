@@ -1,19 +1,24 @@
-<?php 
+<?php
 
 	$users = json_decode(file_get_contents("./db/users.json"));
 
 	$id = $_POST['id'];
 
 	$idtoremove = null;
-	foreach ($users->users as $key => $user) {
+	foreach ($users as $key => $user) {
 		if($user->id == $id )
 		{
 			$idtoremove = $key;
+			break;
 		}
 	}
 
-	unset($users->users[$key]);
-	
-	file_put_contents("./db/users.json", json_encode($users));
+	unset($users[$key]);
+
+	$users = array_values(array_filter($users));
+
+	file_put_contents("./db/users.json", json_encode($users, JSON_PRETTY_PRINT ));
+
+	echo $id;
 
 ?>

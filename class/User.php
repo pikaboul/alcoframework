@@ -1,4 +1,4 @@
-<?php 
+<?php
 class User
 {
 
@@ -7,14 +7,16 @@ class User
     private $age;
     private $copyright;
     private $id;
+    private $job;
 
-    function __construct($fn, $ln, $id, $copyright = "", $age = null)
+    function __construct($fn, $ln, $id, $copyright = "", $age = null, $job = null)
     {
         $this->firstname = $fn;
         $this->lastname = $ln;
         $this->copyright = $copyright;
         $this->id = $id;
         $this->age = is_null($age) ? rand(15,99) : $age;
+        $this->job = is_null($job) ? Helper::rand_job() : $job;
     }
 
     /**
@@ -34,7 +36,7 @@ class User
      *
      * @return self
      */
-    public function _setFirstname($firstname)
+    public function setFirstname($firstname)
     {
         $this->firstname = $firstname;
 
@@ -58,7 +60,7 @@ class User
      *
      * @return self
      */
-    public function _setLastname($lastname)
+    public function setLastname($lastname)
     {
         $this->lastname = $lastname;
 
@@ -82,7 +84,7 @@ class User
      *
      * @return self
      */
-    public function _setAge($age)
+    public function setAge($age)
     {
         $this->age = $age;
 
@@ -145,6 +147,26 @@ class User
         $this->id = $id;
 
         return $this;
+    }
+
+    /**
+     * Gets the value of job.
+     *
+     * @return mixed
+     */
+    public function getJob()
+    {
+        return $this->job;
+    }
+
+    /**
+     * Gets the value of job.
+     *
+     * @return mixed
+     */
+    public function setJob()
+    {
+        return $this->job;
     }
 }
 

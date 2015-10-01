@@ -3,9 +3,21 @@ $(document).keypress(function(e) {
 		var firstname = prompt("Newbie's first name?");
 		var lastname = prompt("Newbie's last name?");
 		var age    = prompt("For how long?");
-		if(firstname != "" && firstname !== null && age != "" && age !== null)
+		if(firstname != "" && firstname !== null)
 		{
-			ajaxreq({ lastname: lastname, firstname: firstname, age: age },"http://localhost:3000/Back/add",function(){$('body').append('<div class="name"><h1 class="animated bounceInLeft" style="-webkit-animation-delay: 1s;">' + firstname + ',<div class="age">alcoolique depuis ' + age + ' ans</div></h1></div>');},function(){alert( "Request failed: " + textStatus );});
+			ajaxreq(
+				{ lastname: lastname, firstname: firstname, age: age },
+				"../add",
+				function(id){
+					$('.content').append('<div id="load"></div>');
+					$('#load').load('/bonjour #' + id, function(){
+						$('#' + id).unwrap();
+						$('html, body').animate({
+							scrollTop: $("#" + id).offset().top
+						}, 2000);
+					});
+				},
+				function(){alert( "Request failed: " + textStatus );});
 		}
 	}
 });
@@ -13,7 +25,19 @@ $(document).keypress(function(e) {
 
 $(document).on('click','.remove',function(e) {
 	var id = $(this).attr('data-id');
-	ajaxreq({ id: id },"http://localhost:3000/Back/remove",function(){},function(){});
+	ajaxreq(
+		{ id: id },
+		"../remove",
+		function(id){
+			$('#' + id).slideUp();
+			setTimeout(function(){
+				$('#' + id).remove();
+			},500);
+		},
+		function() {
+		alert( "Request failed: " + textStatus );
+		}
+	);
 });
 
 
@@ -28,12 +52,8 @@ function ajaxreq(data, url, callbackdone, callbackfail)
 		method: "POST",
 		data: data
 	});
-	 
-	request.done(function( msg ) {
-		$('body').append('<div class="name"><h1 class="animated bounceInLeft" style="-webkit-animation-delay: 1s;">' + firstname + ',<div class="age">alcoolique depuis ' + age + ' ans</div></h1></div>');
-	});
-	 
-	request.fail(function( jqXHR, textStatus ) {
-		alert( "Request failed: " + textStatus );
-	});
+
+	request.done(callbackdone);
+
+	request.fail(callbackfail);
 }
