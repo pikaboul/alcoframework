@@ -1,14 +1,14 @@
 <?php
 
-class engine
+class Engine
 {
-	function render($tpl, $data = null)
+	static function render($tpl, $data = null)
 	{
 		if(is_array($data))
 		{
 			extract($data);
 		}
-		include_once('./template/' . $tpl . ".php");
+		include('./template/' . $tpl . ".php");
 	}
 }
 

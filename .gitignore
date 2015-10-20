@@ -2,3 +2,6 @@
 vagrant/
 alco.sublime-project
 alco.sublime-workspace
+sound/*
+css/.sass-cache
+css/

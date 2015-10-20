@@ -8,14 +8,8 @@ $(document).keypress(function(e) {
 			ajaxreq(
 				{ lastname: lastname, firstname: firstname, age: age },
 				"../add",
-				function(id){
-					$('.content').append('<div id="load"></div>');
-					$('#load').load('/bonjour #' + id, function(){
-						$('#' + id).unwrap();
-						$('html, body').animate({
-							scrollTop: $("#" + id).offset().top
-						}, 2000);
-					});
+				function(result){
+					$('.content').append(result);
 				},
 				function(){alert( "Request failed: " + textStatus );});
 		}
@@ -39,10 +33,6 @@ $(document).on('click','.remove',function(e) {
 		}
 	);
 });
-
-
-
-
 
 
 function ajaxreq(data, url, callbackdone, callbackfail)

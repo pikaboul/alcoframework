@@ -1,3 +1,3 @@
 <?php
-$engine->render('home');
+Engine::render('home');
 ?>
