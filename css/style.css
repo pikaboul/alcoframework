@@ -1,38 +1,88 @@
-body {
-  margin: 0;
-  color: Turquoise; }
-  body .name {
-    font-size: 2em;
-    text-align: center;
-    margin-top: 3em;
-    padding: 1em;
-    background-color: #eee;
-    font-family: 'Arial';
-    position: relative; }
-    body .name:last-of-type {
-      margin-bottom: 100px; }
-    body .name .age {
-      font-size: 0.5em; }
-    body .name .cop {
-      position: absolute;
-      font-size: 0.7em;
-      bottom: 0.4em;
-      right: 0.4em;
-      font-style: italic; }
-    body .name .cop:before {
-      content: "\a9"; }
-    body .name .remove {
-      position: absolute;
-      top: 0.4em;
-      right: 0.4em;
-      -webkit-transition: all 0.4s;
-      -o-transition: all 0.4s;
-      transition: all 0.4s; }
-    body .name .remove:hover {
+html {
+  font-size: 1.2vw;
+  font-family: 'Arial'; }
+  html.hidden {
+    overflow: hidden; }
+  html body {
+    margin: 0;
+    color: Turquoise; }
+    .hidden html body {
+      overflow: hidden; }
+    html body .name {
+      font-size: 2em;
+      text-align: center;
+      margin-top: 3em;
+      padding: 1em;
+      background-color: #eee;
+      position: relative; }
+      html body .name:last-of-type {
+        margin-bottom: 100px; }
+      html body .name .age {
+        font-size: 0.5em; }
+      html body .name .cop {
+        position: absolute;
+        font-size: 0.7em;
+        bottom: 0.4em;
+        right: 0.4em;
+        font-style: italic; }
+      html body .name .cop:before {
+        content: "\a9"; }
+      html body .name .remove {
+        position: absolute;
+        top: 0.4em;
+        right: 0.4em;
+        -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        transition: all 0.4s; }
+      html body .name .remove:hover {
+        cursor: pointer;
+        transform: rotate(180deg); }
+      html body .name a {
+        color: DarkTurquoise;
+        font-size: 0.8em; }
+    html body .toast {
+      background-color: rgba(0, 0, 0, 0.2);
+      font-size: 1.5em;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
       cursor: pointer;
-      transform: rotate(180deg); }
-    body .name a {
-      color: DarkTurquoise;
-      font-size: 0.8em; }
+      z-index: 1000; }
+      html body .toast .text, html body .toast form {
+        cursor: default;
+        position: absolute;
+        display: inline-block;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 30%;
+        text-align: center;
+        background-color: Turquoise;
+        color: white;
+        padding: 1.5em;
+        box-shadow: 0 0 35px 0px rgba(0, 0, 0, 0.2); }
+        html body .toast .text p, html body .toast form p {
+          margin: 0;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%); }
+        html body .toast .text fieldset, html body .toast form fieldset {
+          display: inline-block;
+          text-align: center;
+          border: none; }
+          html body .toast .text fieldset input[type=text], html body .toast form fieldset input[type=text] {
+            width: 70%;
+            font-size: inherit;
+            border: none;
+            border-radius: 0.3em;
+            display: inline-block;
+            margin-bottom: 1em;
+            padding: 0.55em; }
+          html body .toast .text fieldset input[type=image], html body .toast form fieldset input[type=image] {
+            width: 18%;
+            display: inline-block; }
 
 /*# sourceMappingURL=style.css.map */

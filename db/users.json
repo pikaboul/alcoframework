@@ -19,5 +19,26 @@
         "lastName": "Xing",
         "age": "21",
         "job": "Charlie"
+    },
+    {
+        "id": 34,
+        "firstName": "Thomas",
+        "lastName": "Boulongne",
+        "age": "22",
+        "job": "victime de mon succ\u00e8s"
+    },
+    {
+        "id": 35,
+        "firstName": "Th\u00e9o",
+        "lastName": "Baes",
+        "age": "22",
+        "job": "attir\u00e9 sexuellement par Igor Bogdanov"
+    },
+    {
+        "id": 36,
+        "firstName": "Quentin",
+        "lastName": "Tshaimanga",
+        "age": "22",
+        "job": "schizophr\u00e8ne, mais on se soigne"
     }
 ]

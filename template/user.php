@@ -5,5 +5,5 @@
 	<?php if ($value->getCopyright() != ""): ?>
 	<div class="cop"><?php echo $value->getCopyright() ?></div>
 	<?php endif ?>
-	<?php /* ?><div class="remove" data-id="<?php echo $value->getId() ?>">&#9587;</div><?php */?>
+	<?php if($ADMIN): ?><div class="remove" data-id="<?php echo $value->getId() ?>">&#9587;</div><?php endif;?>
 </div>

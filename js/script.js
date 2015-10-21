@@ -1,19 +1,30 @@
 $(document).keypress(function(e) {
-	if(e.which == 13) {
-		var firstname = prompt("Newbie's first name?");
-		var lastname = prompt("Newbie's last name?");
-		var age    = prompt("For how long?");
-		if(firstname != "" && firstname !== null)
-		{
-			ajaxreq(
-				{ lastname: lastname, firstname: firstname, age: age },
-				"../add",
-				function(result){
-					$('.content').append(result);
-				},
-				function(){alert( "Request failed: " + textStatus );});
-		}
+	if(e.which == 13 && $('form').length == 0) {
+
+		ajaxreq(
+			{ getForm: true },
+			"../add",
+			function(result){
+				$('.content').prepend(result);
+				$('html').addClass('hidden');
+			},
+			function(){alert( "Request failed: " + textStatus );}
+		);
+
 	}
+});
+
+$(document).on('submit', 'form', function(e) {
+	e.preventDefault();
+	ajaxreq(
+		$(this).serialize(),
+		"../add",
+		function(result){
+			$('.content').append(result);
+			removeToast(200);
+		},
+		function(){alert( "Request failed: " + textStatus );}
+	);
 });
 
 
@@ -33,6 +44,19 @@ $(document).on('click','.remove',function(e) {
 		}
 	);
 });
+
+
+$(document).on('click','.toast',function(e) {
+	if(e.target == this){
+		removeToast(200);
+	}
+});
+
+function removeToast(timing) {
+	$('html').removeClass('hidden');
+	$('.toast').fadeOut(timing);
+	setTimeout(function(){ $('.toast').remove(); }, timing);
+}
 
 
 function ajaxreq(data, url, callbackdone, callbackfail)
