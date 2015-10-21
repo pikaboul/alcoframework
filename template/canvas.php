@@ -6,6 +6,7 @@
 </head>
 <body>
 	<canvas id="canvas"></canvas>
+	<script src="./js/pacman.js"></script>
 	<script src="./js/canvas.js"></script>
 </body>
 </html>

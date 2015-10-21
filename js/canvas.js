@@ -1,8 +1,37 @@
 (function(){
-	var canavs = getElementById('canavas');
+	var canvas = document.getElementById('canvas');
 
 	canvas.width = window.innerWidth;
 	canvas.height = window.innerHeight;
-	var context - canavas.getContext('2d');
+
+	w = canvas.width;
+	h = canvas.height;
+
+	var context = canvas.getContext('2d');
+	x = 250;
+	y = 500;
+
+	var i = 0;
+
+	var pacmen = [];
+
+	document.querySelector('body').onclick = function(){
+		ctx = canvas.getContext('2d');
+		pacmen.push(new Pacman(getRandomInt(50,250), ctx, getRandomInt(250, canvas.width-250), getRandomInt(250, canvas.height-250), "rgb(" + getRandomInt(0,255) + "," + getRandomInt(0,255) + "," + getRandomInt(0,255) + ")"));
+		// pc.move();
+		i++;
+	}
+
+	setInterval(function(){
+
+		context.clearRect(0,0,canvas.height,canvas.width);
+		pacmen.forEach(function(pacman){
+			pacman.update();
+		});		
+	}, 10)
 
 })();
+
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
