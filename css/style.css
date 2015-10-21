@@ -1,6 +1,7 @@
 html {
   font-size: 1.2vw;
-  font-family: 'Arial'; }
+  font-family: 'Arial';
+  overflow-x: hidden; }
   html.hidden {
     overflow: hidden; }
   html body {
@@ -16,7 +17,7 @@ html {
       background-color: #eee;
       position: relative; }
       html body .name:last-of-type {
-        margin-bottom: 100px; }
+        margin-bottom: calc(8vh + 1em); }
       html body .name .age {
         font-size: 0.5em; }
       html body .name .cop {
@@ -84,5 +85,26 @@ html {
           html body .toast .text fieldset input[type=image], html body .toast form fieldset input[type=image] {
             width: 18%;
             display: inline-block; }
+    html body .hint {
+      font-size: 1.8em;
+      height: 8vh;
+      background-color: rgba(255, 255, 255, 0.6);
+      text-align: center;
+      padding: 1vw;
+      z-index: 500; }
+      html body .hint span {
+        max-height: 80%;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 1vw;
+        line-height: 8vh; }
+      html body .hint .img {
+        vertical-align: middle;
+        height: 50%;
+        display: inline-block;
+        line-height: 8vh; }
+        html body .hint .img svg {
+          height: 100%;
+          max-width: 100%; }
 
 /*# sourceMappingURL=style.css.map */
