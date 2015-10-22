@@ -1,5 +1,0 @@
-<?php 
-
-	Engine::render('canvas');
-
-?>

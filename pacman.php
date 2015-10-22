@@ -1,0 +1,5 @@
+<?php 
+
+	Engine::render('pacman');
+
+?>
